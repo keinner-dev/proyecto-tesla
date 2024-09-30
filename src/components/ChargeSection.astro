@@ -1,26 +1,54 @@
-<section class=" Landing-section bg-black h-screen w-screen text-center relative overflow-hidden" data-header-color='black'>
+---
+const { title, img, subtitulo, boton1, boton2, referencia, compra, light } = Astro.props;
+---
 
+<section
+    class="Landing-section bg-black h-screen w-screen text-center relative overflow-hidden"
+    data-header-color="black"
+>
     <div class="z-30 relative h-full flex flex-col">
         <header>
-            <h2 class="text-black pt-40 text-[40px] font font-medium">Model Y</h2>
+            <h2 class="text-black pt-40 text-[40px] font font-medium" style={{color: light ? 'white' : null}}>
+                {title}
+            </h2>
             <p class="text-black text-sm underline">
-                Concertar una Prueba de conduccion
+                {subtitulo}
             </p>
         </header>
 
-    <footer class=" flex flex-grow flex-nowrap justify-end flex-col pb-20">
-        <div>
-            <a class=" bg-gray-600 text-sm rounded font-medium text-white px-12 py-2 inline-block transition-colors hover:bg-black hover:text-white" href="#">
-                Explorar Inventario
-            </a>
-            <a class=" bg-white text-sm rounded font-medium px-12 py-2 hover:bg-white¡ transition-colors hover:bg-black hover:text-white inline-flex justify-center items-center text-black" href="#">
-                Pedido Personalizado
-            </a>
-        </div>
-    </footer>
+        <footer class="flex flex-grow flex-nowrap justify-end flex-col pb-20">
+            <div>
+                {
+                    boton1 ? (
+                        <a
+                            class=" bg-gray-600 text-sm rounded font-medium text-white px-12 py-2 inline-block transition-colors hover:bg-black hover:text-white"
+                            href={referencia}
+                        >
+                            {boton1}
+                        </a>
+                    ) : null
+                }
+                
+                {
+                    boton2 ? (
+
+                <a
+                    class="bg-white text-sm rounded font-medium px-12 py-2 hover:bg-white¡ transition-colors hover:bg-black hover:text-white inline-flex justify-center items-center text-black"
+                    href={compra}
+                >
+                    {boton2}
+                </a>
+                  ) : null
+                }
+            </div>
+        </footer>
     </div>
 
-<div class="absolute top-0 bottom-0 h-full w-full z-10">
-    <img src='/model-Y.avif' alt='Model Y' class='h-full w-full object-cover object-center'/>
-</div>
+    <div class="absolute top-0 bottom-0 h-full w-full z-10">
+        <img
+            src={img}
+            alt="Model Y"
+            class="h-full w-full object-cover object-center"
+        />
+    </div>
 </section>

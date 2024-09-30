@@ -10,16 +10,16 @@ import ChargeSection from '../components/ChargeSection.astro'
 		
 	<main class="snap-y snap-mandatory relative w-full overflow-auto scroll-smooth">
 	<div class="snap-center">
-		<HeroSection />
+		<HeroSection referencia="https://www.tesla.com/es_es/drive" />
 	</div>
 	<div class="snap-center">
-		<ChargeSection />
+		<ChargeSection title="Model Y" img='/model-Y.avif' subtitulo='Precio con la aplicación de los programas Tesla Boost e incentivos de movilidad eléctrica1.' boton1="Explorar Inventario" boton2="Pedido Personalizado" referencia="https://www.tesla.com/es_es/modely/design#overview" compra="https://www.tesla.com/es_es/drive?selectedModel=ModelY" />
 	</div>
 	<div class="snap-center">
-		<HeroSection />
+		<ChargeSection title="Model S" img='/model-s.avif' boton1="Encargar" boton2="Prueba de conduccion" referencia="https://www.tesla.com/es_es/models/design#overview" compra="https://www.tesla.com/es_es/drive?selectedModel=models" light={true}/>
 	</div>
 	<div class="snap-center">
-		<ChargeSection />
+		<ChargeSection title="Accesorios" img="/accesorios.avif" boton2="Comprar ahora" compra="https://shop.tesla.com/es_es?tesref=true" />
 	</div>
 		
 	</main>
